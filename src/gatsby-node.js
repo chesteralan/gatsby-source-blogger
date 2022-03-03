@@ -54,25 +54,26 @@ exports.sourceNodes = async (
 
     if (posts) {
       posts.forEach(async (post) => {
-        let featuredImageNode = null;
+        
+        // let featuredImageNode = null;
 
-        if (post.images) {
-          try {
-            featuredImageNode = await createRemoteFileNode({
-              url: post.images[0].url,
-              store,
-              cache,
-              createNode,
-              createNodeId,
-            });
-          } catch (e) {
-            throw Error(e);
-          }
-        }
+        // if (post.images) {
+        //   try {
+        //     featuredImageNode = await createRemoteFileNode({
+        //       url: post.images[0].url,
+        //       store,
+        //       cache,
+        //       createNode,
+        //       createNodeId,
+        //     });
+        //   } catch (e) {
+        //     throw Error(e);
+        //   }
+        // }
 
-        if (featuredImageNode && featuredImageNode.ext !== ".gif") {
-          post.featuredImage___NODE = featuredImageNode.id;
-        }
+        // if (featuredImageNode && featuredImageNode.ext !== ".gif") {
+        //   post.featuredImage___NODE = featuredImageNode.id;
+        // }
 
         return unified()
           .use(parse)
