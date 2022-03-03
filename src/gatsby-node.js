@@ -15,7 +15,7 @@ const refactoredEntityTypes = {
 
 exports.sourceNodes = async (
   { cache, store, actions, createNodeId },
-  { apiKey, blogId, fetch_posts, fetch_pages, limit }
+  { apiKey, blogId, fetch_posts, fetch_pages }
 ) => {
   const { createNode, setPluginStatus } = actions;
 
@@ -33,7 +33,7 @@ exports.sourceNodes = async (
     try {
       let params = {
         blogId: blogId,
-        maxResults: limit || 500,
+        maxResults: 500,
         fetchImages: true,
       };
 
@@ -119,7 +119,7 @@ ${md}`,
     try {
       let params = {
         blogId: blogId,
-        maxResults: limit || 500,
+        maxResults: 500,
       };
 
       do {
